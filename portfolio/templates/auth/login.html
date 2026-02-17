@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/src/output.css' %}">
+</head>
+
+<body class="bg-[#101014]">
+    <div
+        class="w-[80%] border mx-auto my-10 bg-white p-4 md:w-[50%] xl:w-[30%] xxl:w-[30%] rounded shadow-white shadow-sm">
+        <div class="text-center font-normal text-xl my-5">Create Account</div>
+        <form action="" method="POST" onsubmit="return validateData()" id="register">
+            {% csrf_token %}
+            <div class="mb-3">
+                <div class="flex gap-2 w-full items-center">
+                    <div class="w-7 h-7 p-5 rounded-full flex items-center border justify-center shrink-0">
+                        <i class="fa fa-user fa-2x text-gray-700"></i>
+                    </div>
+                    <div class=" w-full">
+                        <div>Username</div>
+                        <input type="text" class="border-b w-full h-10 outline-none" placeholder="Username" name="username">
+                    </div>
+                </div>
+                <div class="bg-red-400 rounded ml-13 mt-2 py-1 hidden" id="username-error-box">
+                    <p id="username-error" class="text-center ">Hello</p>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <div class="flex gap-2 w-full items-center">
+                    <div class="w-7 h-7 p-5 rounded-full flex items-center border justify-center shrink-0">
+                        <i class="fa fa-lock fa-2x text-gray-700"></i>
+                    </div>
+                    <div class="w-full">
+                        <div>Password</div>
+                        <input type="password" class="border-b w-full h-10 outline-none" placeholder="Enter Password" name="password">
+                    </div>
+                </div>
+                <div class="bg-red-400 rounded ml-13 mt-2 py-1 hidden" id="password-error-box">
+                    <p id="password-error" class="text-center ">Hello</p>
+                </div>
+            </div>
+
+            <div class="mb-3 flex justify-center">
+                <div><button type="submit" class="rounded px-10 py-2 bg-green-700">Log In</button></div>
+            </div>
+        </form>
+        <div class="mb-4 flex justify-center">
+            <div>
+                <p>If You're Not Register? <a href="" class="text-blue-700">Register</a></p>
+            </div>
+        </div>
+
+    </div>
+    <script src="{% static 'js/register.js' %}"></script>
+</body>
+
+</html>
