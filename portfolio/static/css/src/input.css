@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components {
+    body.home .home, body.about .about, body.contact .contact, body.portfolio .portfolio{
+        @apply border-b-2 border-blue-700
+    }
+}
