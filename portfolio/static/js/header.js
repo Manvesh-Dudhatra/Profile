@@ -1,10 +1,8 @@
-let items = document.querySelectorAll(".menu-item")
-
-items.forEach(item => {
-    item.addEventListener('click', function () {
-        items.forEach(item => {
-            item.classList.remove("border-b-3","border-blue-700")
-        })
-        this.classList.add("border-b-3","border-blue-700")
-    })
-})
+document.addEventListener("DOMContentLoaded", function () {
+    const current = window.location.pathname;
+    document.querySelectorAll(".menu-item").forEach(link => {
+        if (link.getAttribute("href") === current) {
+            link.classList.add("border-b-2", "border-blue-700");
+        }
+    });
+});

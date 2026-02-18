@@ -7,7 +7,7 @@
     <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/src/output.css' %}">
 </head>
-<body class="bg-[#09101c]">
+<body class="{{ request.resolver_match.url_name }}">
     {% block content %}
     {% endblock %}
     

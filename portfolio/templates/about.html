@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+About
+{% endblock %}
+{% block content %}
+{% include 'header.html' %}
+
+<div class=" mx-auto flex-column px-10 my-10 gap-5 w-[80%]">
+    <div class="w-full flex justify-center pt-5">
+        <img src="{% static 'images/user-icon.svg' %}" class=" w-[25%] h-[25%]">
+    </div>
+
+    <div class="w-full mt-10">
+        <p class="text-3xl mb-5 bg-linear-to-r from-blue-700 to-blue-300 text-transparent bg-clip-text">ABOUT ME</p>
+        <p class="mb-5">
+            Hello! I’m Manvesh Dudhatra, a passionate Python Backend Developer who loves building clean, responsive, <br>
+            and user-friendly web applications.
+        </p>
+        <p class="mb-5">
+            I specialize in Python, Django, and Django Rest Framework, with strong fundamentals in DOM
+            manipulation, API integration, and backend development. I enjoy turning complex problems into simple,
+            efficient, and scalable solutions.
+        </p>
+
+        <p class="mb-5">
+            I have hands-on experience working with:
+        </p>
+        <div class="px-10 mb-5">
+            <ul class="list-disc">
+                <li>Frontend development using HTML, CSS, Tailwind CSS, JavaScript</li>
+                <li>Backend development using Python, Django, and DRF</li>
+                <li>REST API creation and integration</li>
+                <li>Authentication systems using JWT</li>
+                <li>Database management and optimization</li>
+            </ul>
+        </div>
+        <p class="mb-5">
+            I am constantly improving my skills by building practical projects, solving real-world problems, and
+            learning modern web development practices.
+        </p>
+        <p class="mb-5">
+            My goal is to become a highly skilled software developer who creates impactful digital experiences and
+            contributes to innovative projects.
+        </p>
+    </div>
+</div>
+{% endblock %}
