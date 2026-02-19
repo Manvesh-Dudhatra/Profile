@@ -6,13 +6,31 @@ Contact
 {% block content %}
 {% include 'header.html' %}
 
-<div
-    class="md:flex w-[80%] mx-auto justify-content-between items-center justify-center p-5 my-5 gap-5 flex-row-reverse">
-    <div class="md:w-[50%] flex justify-center mb-3">
-        <img src="{% static 'images/user-icon.svg' %}" class=" w-[30%] h-[30%]">
+<div class="md:flex w-[90%] mx-auto p-2 my-3 gap-10 flex-row-reverse">
+    <div class="md:w-[70%] flex flex-col items-center">
+        <div class="w-[70%] h-60 mx-auto">
+            <img src="{% static 'images/user-icon.svg' %}" class="w-full h-full">
+        </div>
+        <div class="w-full  md:mx-auto md:w-[60%] my-10">
+            <p class="text-2xl md:text-3xl mb-5 bg-linear-to-r from-blue-700 to-blue-300 text-transparent bg-clip-text w-full">GET IN TOUCH
+            </p>
+            <div>
+                <p class="mb-3"><i class="fa fa-user mr-3"></i>Manvesh Dudhatra</p>
+                <p class="mb-3"><i class="fa fa-envelope mr-2"></i>dudhatramanvesh23@gmail.com</p>
+                <p class="mb-3"><i class="fa fa-phone mr-3"></i>+91 9824700957</p>
+            </div>
+
+            <div class="flex gap-2">
+                <a href="" class="hover:scale-125 duration-500"><img src="{% static 'images/github.png' %}" alt=""
+                        class="rounded-full size-8"></a>
+                <a href="" class="hover:scale-125 duration-500"><img src="{% static 'images/linkedin.png' %}" alt=""
+                        class="rounded-full size-8"></a>
+            </div>
+
+        </div>
     </div>
 
-    <div class="md:w-[50%]">
+    <div class="md:w-[30%]">
         <p class="text-3xl mb-6  bg-linear-to-r from-blue-700 to-blue-300 text-transparent bg-clip-text">Contact</p>
         <form action="" method="POST" onsubmit="return validateData()" id="contact">
             {% csrf_token %}
@@ -21,34 +39,39 @@ Contact
                     <div class="mb-2">
                         <p class="">First Name</p>
                     </div>
-                    <div><input type="text" class="border-b w-full h-10 px-2" placeholder="First Name" name="fname" id = "fname" required ></div>
+                    <div><input type="text" class="border-b w-full h-10 px-2" placeholder="First Name" name="fname"
+                            id="fname" required></div>
                 </div>
-                <div class="w-full md:w-[50%]" >
+                <div class="w-full md:w-[50%]">
                     <div class="mb-2">
                         <p class="">Last Name</p>
                     </div>
-                    <div><input type="text" class="border-b w-full h-10 px-2" placeholder="Last Name" id = "lname"  name="lname" required></div>
+                    <div><input type="text" class="border-b w-full h-10 px-2" placeholder="Last Name" id="lname"
+                            name="lname" required></div>
                 </div>
             </div>
             <div class="w-full mb-4">
                 <div class="mb-2">
                     <p class="">Company Name</p>
-                </div> 
-                <div><input type="text" class="border-b w-full h-10 px-2" placeholder="Enter Company Name" id="company"  name="company" required></div>
-                
+                </div>
+                <div><input type="text" class="border-b w-full h-10 px-2" placeholder="Enter Company Name" id="company"
+                        name="company" required></div>
+
             </div>
             <div class="w-full mb-4">
                 <div class="mb-2">
                     <p class="">Email</p>
                 </div>
-                <div><input type="email" class="border-b w-full h-10 px-2" placeholder="Enter Email" id="email" name="email" id="email"required></div>
+                <div><input type="email" class="border-b w-full h-10 px-2" placeholder="Enter Email" id="email"
+                        name="email" id="email" required></div>
                 <p id="email-error" class="text-red-400 mt-2 hidden">Email is required</p>
             </div>
             <div class="w-full mb-4">
                 <div class="mb-2">
                     <p class="">Phone Number</p>
                 </div>
-                <div><input type="text" maxlength="10" class="border-b w-full h-10 px-2" placeholder="Enter Phone Number" id="phone" name="phone" required></div>
+                <div><input type="text" maxlength="10" class="border-b w-full h-10 px-2"
+                        placeholder="Enter Phone Number" id="phone" name="phone" required></div>
                 <p id="mobile-error" class="text-red-400 mt-2 hidden">Mobile Number</p>
             </div>
             <div class="w-full mb-4">
@@ -57,9 +80,10 @@ Contact
                 </div>
                 <div><textarea name="message" id="message" class="border w-full rounded" rows="4"></textarea></div>
             </div>
-            <div class="w-full mb-4 flex justify-center">
+            <div class="w-full mb-2 flex justify-center">
                 <button type="submit"
-                    class=" hover:scale-110 duration-500 border p-2 bg-linear-to-r from-blue-700 to-blue-500 text-white rounded-full">Send Message
+                    class=" hover:scale-110 duration-500 border p-2 bg-linear-to-r from-blue-700 to-blue-500 text-white rounded-full">Send
+                    Message
                 </button>
             </div>
         </form>
