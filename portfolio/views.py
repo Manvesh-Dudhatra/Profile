@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import CustomUser
+from .models import CustomUser, Inquiry
 from django.contrib.auth import authenticate, login
 
 def register(request):
@@ -37,6 +37,16 @@ def about(request):
 
 def contact(request):
     if request.method == "POST":
+        fname = request.POST.get("fname")
+        lname = request.POST.get("lname")
+        company = request.POST.get("company")
+        address = request.POST.get('address')
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        message = request.POST.get('message')
+
+        Inquiry.objects.create(name = f'{fname} {lname}', cname = company, address=address, email=email, phone=phone, message = message)
+
         return redirect('contact')
     return render(request, 'contact.html')
 
