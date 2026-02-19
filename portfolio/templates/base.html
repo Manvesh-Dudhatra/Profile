@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/src/output.css' %}">
+    
+</head>
+<body class="{{ request.resolver_match.url_name }}">
+    {% block content %}
+    {% endblock %}
+    
+    {% block jsfile %}
+    {% endblock %}
+</body>
+</html>
