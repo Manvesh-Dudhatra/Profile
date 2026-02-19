@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Contact
+{% endblock %}
+{% block content %}
+{% include 'header.html' %}
+
+<div
+    class="md:flex w-[80%] mx-auto justify-content-between items-center justify-center p-5 my-5 gap-5 flex-row-reverse">
+    <div class="md:w-[50%] flex justify-center mb-3">
+        <img src="{% static 'images/user-icon.svg' %}" class=" w-[30%] h-[30%]">
+    </div>
+
+    <div class="md:w-[50%]">
+        <p class="text-3xl mb-6  bg-linear-to-r from-blue-700 to-blue-300 text-transparent bg-clip-text">Contact</p>
+        <form action="" method="POST" onsubmit="return validateData()" id="contact">
+            {% csrf_token %}
+            <div class="mb-4 md:flex justify-between w-full gap-4">
+                <div class="w-full md:w-[50%]  mb-4">
+                    <div class="mb-2">
+                        <p class="">First Name</p>
+                    </div>
+                    <div><input type="text" class="border-b w-full h-10 px-2" placeholder="First Name" name="fname" id = "fname" required ></div>
+                </div>
+                <div class="w-full md:w-[50%]" >
+                    <div class="mb-2">
+                        <p class="">Last Name</p>
+                    </div>
+                    <div><input type="text" class="border-b w-full h-10 px-2" placeholder="Last Name" id = "lname"  name="lname" required></div>
+                </div>
+            </div>
+            <div class="w-full mb-4">
+                <div class="mb-2">
+                    <p class="">Company Name</p>
+                </div> 
+                <div><input type="text" class="border-b w-full h-10 px-2" placeholder="Enter Company Name" id="company"  name="company" required></div>
+                
+            </div>
+            <div class="w-full mb-4">
+                <div class="mb-2">
+                    <p class="">Email</p>
+                </div>
+                <div><input type="email" class="border-b w-full h-10 px-2" placeholder="Enter Email" id="email" name="email" id="email"required></div>
+                <p id="email-error" class="text-red-400 mt-2 hidden">Email is required</p>
+            </div>
+            <div class="w-full mb-4">
+                <div class="mb-2">
+                    <p class="">Phone Number</p>
+                </div>
+                <div><input type="text" maxlength="10" class="border-b w-full h-10 px-2" placeholder="Enter Phone Number" id="phone" name="phone" required></div>
+                <p id="mobile-error" class="text-red-400 mt-2 hidden">Mobile Number</p>
+            </div>
+            <div class="w-full mb-4">
+                <div class="mb-2">
+                    <p class="">Message</p>
+                </div>
+                <div><textarea name="message" id="message" class="border w-full rounded" rows="4"></textarea></div>
+            </div>
+            <div class="w-full mb-4 flex justify-center">
+                <button type="submit"
+                    class=" hover:scale-110 duration-500 border p-2 bg-linear-to-r from-blue-700 to-blue-500 text-white rounded-full">Send Message
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block jsfile %}
+<script src="{% static 'js/contact.js' %}"></script>
+{% endblock %}
